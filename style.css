@@ -1,0 +1,1374 @@
+/**
+Theme Name: Save the Date
+Theme URI: http://www.milmondesign.com/dev/save-the-date
+Author: Milmon F. Harrison
+Author URI: http://www.milmondesign.com
+Description: A simple theme, with full-width header images, perfect for a wedding website, blog, or anything you want to use it for!
+Version: 1.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: brown, tan, light, one-column, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Text Domain: savethedate
+
+This theme, like WordPress, is licensed under the GPL.
+
+Save the Date is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+**/
+
+
+/*--------------------------------------------------------------
+NOTES/REFERENCE
+--------------------------------------------------------------*/
+/*** Body background color: #F1EBDF; Cream: rgb(241,235,223) ***/
+/*** Lightest cream: #fcfaec; rgb(252, 250, 236) ***/
+/*** Footer background: #E2D9CA; rgb(226,217,202) ***/
+/*** Text, header, & border-bottom color: #BEAF98; rgb(190,175,152); 
+	darkest brown: #484239; 
+	grey: #c6c3b0;
+	brown-grey: #a69a8e;
+	sage: #a29e83;
+***/
+
+
+
+/*-------------------------------------------------------------
+Incorporate font-awesome icons stylesheet
+-------------------------------------------------------------*/
+@import url('./font-awesome-4.2.0/css/font-awesome.min.css'); 
+
+
+/*-------------------------------------------------------------
+Jetpack plugin rules
+-------------------------------------------------------------*/
+.jetpack-image-container img {
+	width:100%;
+}
+
+/*--------------------------------------------------------------
+Reset
+--------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+html {
+	font-size: 62.5%; 
+	overflow-y: scroll; 
+	-webkit-text-size-adjust: 100%; 
+	-ms-text-size-adjust: 100%; 
+}
+
+*,
+*:before,
+*:after { 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box;
+}
+
+body {
+	background: /*#F1EBDF; */ #fff;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+
+ol,
+ul {
+	list-style: none;
+	
+}
+
+table { 
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+/*------------------------------------------------------------- 
+End Reset 
+-------------------------------------------------------------*/
+
+.greeting {
+	font-size: 4.5rem;
+}
+
+/*--------------------------------------------------------------
+Basic Structure
+--------------------------------------------------------------*/
+.full { 
+		
+}
+
+.main-page {
+	max-width: 1024px; /* Max-width gives the impression that the header-area, main-content, and footer-area are actually inside a container, when in reality they are not*/
+	margin:0 auto;
+}
+
+.inner {
+	padding-top: 2.2em; /* changed from 2.5 */
+	padding-bottom:2.2em; 
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.header-area {
+	
+}
+
+.footer-area {
+	background-color: #E2D9CA;
+}
+
+h1{
+	font-size:2em;
+}
+h2{
+	font-size:1.5em;
+}
+h3{
+	font-size:1.17em;
+}
+h4{
+	font-size:1em;
+}
+h5{
+	font-size:.83em;
+}
+h6{
+	font-size:.67em;
+}
+
+h1.site-title a {
+	display:none;
+	line-height:.2em;
+}
+
+h1.page-title,
+h1.entry-title
+ {
+	margin:0 0 20px 0;
+	line-height:1.0em;
+}
+
+h2.comments-title {
+	margin-bottom:20px;	
+}
+
+h3.widget-title {
+	margin-bottom:10px;
+}
+
+img.attachment-post-thumbnail.wp-post-image {
+	margin-bottom:20px;
+}
+
+span.cat-links,
+span.comments-link {
+	margin-right:10px;
+}
+
+span.cat-links:after,
+span.comments-link:after {
+	content: " ";
+}
+
+
+/*-------------------------------------------------------------- 
+Sidebar/Page Layout Rules 
+--------------------------------------------------------------*/
+.headerImg {
+	border-top: 5px solid #beaf98;
+	border-bottom: 5px solid #beaf98;
+	width:100%
+}
+
+p.widget-text { 
+/* this is for the text inside of the google maps widget*/
+margin-bottom: 5px;
+margin-top: -25px;
+}
+
+
+/*----------------------------------------------------------------
+Layouts: the Main content and Sidebars
+----------------------------------------------------------------*/
+
+/* Default Page Template (Right Sidebar)
+------------------------------------------------*/
+#primary {
+	float:left;
+	width: 66.5%;
+	padding: 0 40px 0 0 ;
+}
+
+#secondary.widget-area {
+	float: left;
+	overflow-wrap: breakword;
+	width: 33.5%;
+	padding: 0 /*10px*/;
+}
+
+/* Left Sidebar Page Template
+------------------------------------------------*/
+.left-sidebar 
+#primary {
+	float:right;
+	width:66.5%;
+	padding: 0 0 0 40px;
+}
+
+.left-sidebar
+#secondary.widget-area {
+	float: left;
+	overflow-wrap: breakword;
+	width: 33.5%;
+}
+
+/*-------------------------------------------------------
+Two Sidebars Page Template - Left and Right Sidebars
+--------------------------------------------------------*/
+
+.both-sidebars
+#primary {
+	width:60%;
+	padding: 0 20px;
+} 
+
+.both-sidebars 
+#secondary.widget-area {
+	float: right;
+	width: 20%;
+}
+
+.both-sidebars 
+#tertiary.widget-area2 {
+        float: left; 
+        width: 20%;
+}
+
+
+/* Two left sidebars */
+
+.two-left-sidebars 
+#tertiary.widget-area2 {
+	float: left;
+	width: 20%;
+	overflow-wrap: break-word;
+	padding:20px;
+}
+
+.two-left-sidebars 
+#primary {
+	float: right;
+	width: 60%;
+}
+
+.two-left-sidebars 
+#secondary.widget-area {
+	float: left;
+	overflow-wrap: breakword;
+	width: 20%;
+	padding:20px;
+}
+
+/* Two Right sidebars */
+
+.two-right-sidebars 
+#tertiary.widget-area2 {
+	float: right;
+	width: 20%;
+	overflow-wrap: break-word;
+	padding:20px;
+}
+
+.two-right-sidebars 
+#primary {
+	float: left;
+	width: 60%;
+}
+
+.two-right-sidebars 
+#secondary.widget-area {
+	float: right;
+	overflow-wrap: breakword;
+	width: 20%;
+	padding:20px;
+}
+
+#footer-widget .widget {
+	width: 100%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+aside p {
+margin-bottom: 0px;
+}
+
+/*--------------------------------------------
+End sidebar/page layout rules
+-------------------------------------------- */
+
+
+/*-------------------------------------------------------
+footer/navigation rules - move to new location when done 
+-------------------------------------------------------*/
+ul#menu-footer-menu.menu {
+	margin: 10px 0 10px 0;
+	text-align: center;	
+}
+
+ul#menu-footer-menu.menu li {
+	list-style: none;
+	display: inline-block;
+	font-size: 1.2em;
+	padding: 0;
+	margin: 0;
+	width: 120px;
+}
+
+ul#menu-footer-menu.menu li a {
+	text-decoration: none;
+	color: #7a7067;
+	/* #525e5e; #a29e83; */
+}
+
+ul#menu-footer-menu.menu li a:hover {
+	color: #8c9b96;
+}
+
+.site-footer {
+	text-align: center;
+	font-size: .8em;
+	color: #7a7067; /*grey-brown*/
+
+	/* #525e5e; #484239;*/
+}
+
+.copyright {
+	font-size: 1.2em;
+}
+
+p.copyright a {
+	color:#7a7067;
+	/* #525e5e; #8c9b96; #a29e83; */	
+}
+
+p.copyright a:hover {
+	color: #8c9b96;
+	/* #c6c3b0; */
+}
+
+.footer-social {
+	font-size:1.5em; 
+	text-align:center; 
+	color: #e2d9ca; 
+	vertical-align: middle; 
+	background-color: #fcf6ec; 
+	width: 40px; 
+	height: 40px; 
+	border-radius:50%; 
+	padding-top: 10px;
+}
+
+
+/* -----------------------------------------------------------
+ end of footer/ footer navigation rules 
+-------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: #BEAF98;
+	font-family: "Adorn Roman", serif;
+	font-size: 19px;
+	font-size: 1.9rem;
+	line-height: 1.5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: .5ex;
+}
+
+small {
+	font-size: 75%;
+}
+
+big {
+	font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+Elements
+--------------------------------------------------------------*/
+hr {
+	border: 0;
+	height: 60px;
+	margin: 2.5em 0;
+	background-image: url('http://www.milmondesign.com/dev/save-the-date/wp-content/uploads/2014/10/hRule-long.png');
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	}
+ul,
+ol {
+	margin: 0 0 1.5em 1em;
+}
+
+ul {
+	list-style: disc;
+	/*padding-left:20px;*/
+}
+
+ol {
+	list-style: decimal;
+	/*padding-left:20px;*/
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	/**margin-left: 1em;**/
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto; 
+	max-width: 100%; 
+}
+
+figure {
+	margin: 0;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+th {
+	font-weight: bold;
+}
+
+/*--------------------------------------------------------------
+Forms
+--------------------------------------------------------------*/
+button,
+input,
+select,
+textarea {
+	font-size: 100%; 
+	margin: 0; 
+	vertical-align: baseline; 
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: /*#e6e6e6;*/ #ecd2a1; /*changed on 10/04 */
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+	color: rgba(0, 0, 0, .8);
+	cursor: pointer; 
+	-webkit-appearance: button; 
+	font-size: 12px;
+	font-size: 1.6rem;
+	line-height: 1;
+	padding: .6em 1em .4em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	border-color: #aaa #bbb #bbb;
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	padding: 0; 
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield; 
+	-webkit-box-sizing: content-box; 
+	-moz-box-sizing:    content-box;
+	box-sizing:         content-box;
+}
+
+input[type="search"]::-webkit-search-decoration { 
+	-webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner { 
+	border: 0;
+	padding: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+	padding: 3px;
+	width: 100%;
+}
+
+textarea {
+	overflow: auto; 
+	padding-left: 3px;
+	vertical-align: top; 
+	width: 100%;
+}
+
+/* margin to push the subscribe button a bit */
+p#subscribe-submit {
+margin-top: 10px;
+}
+
+/*--------------------------------------------------------------
+Navigation - Responsive Menu customizations
+--------------------------------------------------------------*/
+#responsive-menu #responsive-menu-title {
+	/*Rules for the sliding navigation; only works if you set it to use this style.css file; keep for awhile */
+}
+
+#responsive-menu {
+	/*background: green;*/	
+}
+
+#click-menu {
+	max-width: 55px;
+	/*right:10%;*/
+	z-index: 1000; /*this is so the sliding nav panel won't go BEHIND the menu icon but will cover it when open */
+}
+
+#RM3Lines {
+	width:100%;
+	}
+
+#click-menu-label {
+		margin-top:-10px;
+	}
+
+
+/*--------------------------------------------------------------
+Links
+--------------------------------------------------------------*/
+a {
+	color: #7a7067; /*#484239; instead of: royalblue; */
+	text-decoration: none;
+}
+
+a:visited {
+	/*color: #BEAF98;  instead of: purple; */
+	text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color:#8c9b96;/*#FCFAEC;*/
+	text-decoration: none;
+	
+}
+
+/*--------------------------------------------------------------
+Menus - Main theme menus
+--------------------------------------------------------------*/
+.main-navigation,.footer-navigation {
+	clear: both;
+	display: none;
+	float: left;
+	width: 100%;
+}
+
+.main-navigation ul,.footer-navigation ul {
+	list-style: none;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.main-navigation li,.footer-navigation li {
+	position: relative;
+	width: 120px;
+	display: inline-block;
+	text-align: center;
+}
+
+.main-navigation a,.footer-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
+.main-navigation ul ul,.footer-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 1.5em;
+	left: -999em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul ul li {
+
+}
+
+.main-navigation li:hover > a {
+}
+
+.main-navigation ul ul :hover > a {
+}
+
+.main-navigation ul ul a:hover {
+}
+
+.main-navigation ul li:hover > ul {
+	left: auto;
+}
+
+.main-navigation ul ul li:hover > ul {
+	left: 100%;
+}
+
+.main-navigation .current_page_item a,
+.main-navigation .current-menu-item a {
+}
+
+.menu-toggle {
+	display: none;
+}
+
+.site-main .comment-navigation,
+.site-main .paging-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+/*--------------------------------------------------------------
+Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+img.alignleft.home-img {
+	vertical-align: text-top;
+	padding-top: 8px;
+	margin-bottom: 10px;
+}
+
+img.alignright.home-img {
+	vertical-align: text-top;
+	padding-top: 8px;
+	margin-bottom: 10px;
+}
+
+img.aligncenter.home-img {
+	vertical-align: text-top;
+	padding-top: 8px;
+	margin-bottom: 10px;
+}
+
+
+/*--------------------------------------------------------------
+Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: '';
+	display: table;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets */
+.widget select {
+	max-width: 100%;
+}
+
+/* Search widget */
+.widget_search .search-submit {
+	display: none;
+}
+
+
+/*--------------------------------------------------------------
+Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*hr.section-divider {
+	height: 31px;
+	/*background: #EEE;*/
+	position: relative;
+	overflow: visible;
+	z-index: 100;
+	margin-top: 70px;
+	margin-bottom: 70px;
+}
+
+hr.section-divider:after {
+	z-index: 10000;
+	content: "\f004";
+	font-family: FontAwesome;
+	color: #BEAF98;
+	position: absolute;
+	top: -23px;
+	left: 50%;
+	right: 50%;
+	width: 40px;
+	height: 30px;
+	margin-left: -20px;
+	font-size: 30px;
+}*/
+
+hr.section-divider {
+height: 60px;
+background: url('http://www.milmondesign.com/dev/save-the-date/wp-content/uploads/2014/10/hRule-long.png') no-repeat center;
+border: none;
+}
+
+/*--------------------------------------------------------------
+Asides
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+Media
+--------------------------------------------------------------*/
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 0 auto;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+/*--------------------------------------------------------------
+Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+
+/*--------------------------------------------------------------
+Responsive rules/Media queries
+--------------------------------------------------------------*/
+@media screen and (max-width:1023px) {
+	h1.site-title a {
+		font-size:3.4rem;
+		display:block;
+		line-height:.2em;
+	}
+
+	#click-menu.admin-bar-showing {
+		margin-top: 50px;
+	}
+	
+}
+
+@media screen and (max-width: 800px) {
+	
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+
+	#primary,
+	#secondary {
+		float:none;
+		padding:0;
+		width:100%;
+	}
+
+	#primary-right,
+	#secondary-left {
+		float:none;
+		padding:0;
+		width:100%;
+	}
+
+	/*.left-sidebar 
+	#primary {
+		float:none;
+		width:100%;
+	}
+
+	.left-sidebar
+	#secondary.widget-area {
+		/*width: 100%;
+	}*/
+
+/* Left Sidebar Page Template
+------------------------------------------------*/
+	.left-sidebar
+	#primary {
+		width:100%;
+		padding:0;
+	}
+
+	.left-sidebar
+	#secondary.widget-area {
+		width: 100%;
+	}
+
+/* -------------------------------------------------------
+Two Sidebars Page Template - Left and Right Sidebars
+-------------------------------------------------------- */
+
+	.both-sidebars
+	#primary {
+		width:100%;
+	} 
+
+	.both-sidebars 
+	#secondary.widget-area {
+		float: left;
+		width: 100%;
+	}
+
+	.both-sidebars 
+	#tertiary.widget-area2 {
+        	float: left; 
+        	width: 100%;
+	}
+
+
+/* Two left sidebars */
+
+	.two-left-sidebars 
+	#tertiary.widget-area2 {
+		/*float: none;*/
+		width: 100%;
+	}
+
+	.two-left-sidebars 
+	#primary {
+		/*float: none;*/padding:0;
+		width: 100%;
+	}
+
+	.two-left-sidebars 
+	#secondary.widget-area {
+		/*float: none;*/padding:0;
+		width: 100%;	
+	}
+
+/* Two Right sidebars */
+
+	.two-right-sidebars 
+	#tertiary.widget-area2 {
+		/*float: none;*/
+		width: 100%;
+	}
+
+	.two-right-sidebars 
+	#primary {
+		/*float: none;*/
+		width: 100%;
+	}
+
+	.two-right-sidebars 
+	#secondary.widget-area {
+		/*float: none;*/
+		width: 100%;
+	}
+
+	#secondary.widget-area {
+		/*float:none;*/
+		width: 100%
+		}
+
+/*--------------------------------------------
+End sidebar/page layout rules
+---------------------------------------------*/
+
+	.inner { 
+		padding-left:20px; 
+		padding-right:20px;
+	}
+
+	.site-footer {
+		text-align:center;
+	}
+
+	#footer-widget .widget {
+		width:100%;
+	}
+
+	ul#menu-footer-menu.menu li {
+		width:100px;
+	}
+
+	#primary {
+	overflow-wrap: break-word;
+	}
+}
+
+
+@media (max-width: 639px) {
+	img.alignleft.home-img {
+		width:100%;
+	}
+	img.alignright.home-img {
+		width:100%;
+	
+	}
+	img.aligncenter.home-img {
+		width:100%;
+	}
+}
+
+@media (max-width: 320px){
+	input#name.required,
+	input#website,
+	input#firstName.required,
+	input#lastName.required {
+		width: 100%;
+	}
+
+	#primary {
+		overflow-wrap: break-word;
+	}
+
+	img.alignleft.home-img {
+		width:100%;
+	}
+
+	img.alignright.home-img {
+		margin-left:0;*/
+		width:100%;
+	}
+
+	img.aligncenter.home-img {
+		width:100%;
+	}
+	h1.site-title a {
+		display:block;
+		font-size: 2.5rem;
+	}
+	.inner {
+   		padding: 1.7em 20px;/*added 10/26 */
+	}
+
+/*The next two rules control the styling of the Responsive Menu button and label for the iPhone in portrait orientation */
+	#RM3Lines {
+		margin-top: -10px;
+	}
+
+	#click-menu-label {
+		margin-top:-15px;
+	}
+
+	.greeting {
+		font-size:3.5rem;
+	}
+
+}
